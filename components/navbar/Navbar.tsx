@@ -5,6 +5,7 @@
 import Link from "next/link"
 
 import { HomeIcon } from '@primer/octicons-react'
+import { ActiveLink } from "../active-link/ActiveLink"
 
 const navItems = [
   { label: "About", path: "/about" },
@@ -26,11 +27,7 @@ export const Navbar = () => {
       <div className="flex justify-start items-end gap-4">
         {
           navItems.map((navItem) => (
-            <Link 
-              key={ navItem.path } 
-              href={ navItem.path }>
-              { navItem.label }    
-            </Link>
+            <ActiveLink key={navItem.path} { ...navItem } />
           ))
         }
       </div>
